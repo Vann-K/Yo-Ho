@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Name: A Coding Challenge</title>
+    <title>Yo-Ho: A Coding Challenge</title>
 
     <!-- DEVICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -27,7 +27,7 @@
             <div class="container-xxl">
                 <a class="navbar-brand" href="/index.html">
                     <img src="/img/Kraken-Footer-Logo.svg" height="50" />
-                    <span class="ms-3">App Name</span>
+                    <span class="ms-3">Yo-Ho</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -62,9 +62,42 @@
         </nav>
     </header>
     <main class="container">
-        <h1> APP UI GOES HERE </h1>
-        <input id="message" type="text" placeholder="Enter a message">
-        <button class="btn btn-primary" type="button" id="btnSubmit">Display a Message.</button>
+        <div class="row row-cols-1  d-flex justify-content-center">
+            <div class="col col-12 border-2 border-bottom border-dark-subtle">
+
+
+                <div class="col">
+                    <h1>Yo-Ho! - A Pirate's FizzBuzz</h1>
+                    <p>Ye have heard of the fabled FizzBuzz, but pirates always prefer knock-offs. So here be Yo-Ho!
+                        A
+                        pirate's version of the classic coding challenge.</p>
+                    <h4>Instructions</h4>
+                    <p>Pick a number to set as your Yo value. Then pick a number to set as your Ho value. Finally,
+                        choose
+                        which number you'd like the pirates to count to.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col col-12 mt-2">
+            <form action="#" class="row gy-2 gx-3 pb-1 border-2 border-bottom border-dark-subtle">
+                <h1>Yo-Ho!</h1>
+                <div class="col">
+                    <input type="number" placeholder="Yo Value!" id="yoValue" class="form-control" value="3"
+                        aria-label="Yo Value">
+                    <label class="form-check-label" for="yoValue">Yo Value</label>
+                </div>
+                <div class="col">
+                    <input type="number" placeholder="Ho Value!" id="hoValue" class="form-control" value="5"
+                        aria-label="Ho Value">
+                    <label class="form-check-label" for="yoValue">Ho Value</label>
+                </div>
+                <div class="col">
+                    <input type="number" placeholder="How High?" id="countTo" class="form-control" value="100"
+                        aria-label="Yo Value">
+                    <label class="form-check-label" for="yoValue">How High Can They Count?</label>
+                </div>
+            </form>
+        </div>
     </main>
     <footer class="container-fluid py-2">
         <div class="row align-items-center footer-main">
