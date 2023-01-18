@@ -55,19 +55,19 @@ function displayYoHo(numbers) {
         // print yoho
         if (numbers[i] % 3 == 0 && numbers[i] % 5 == 0) {
             className = 'yoHo';
-            tableHtml += `<td class="${className}">Yo-Ho!</td>`;
+            tableHtml += `<td class="${className}">Yo-Ho! - ${value}</td>`;
         }
         // If divisible 3 && not divisible by 5
         // Print Yo
         if (numbers[i] % 3 == 0 && numbers[i] % 5 != 0) {
             className = 'yo';
-            tableHtml += `<td class="${className}">Yo!</td>`;
+            tableHtml += `<td class="${className}">Yo! - ${value}</td>`;
         }
         //If divisble by 5 && not 3
         //Print Ho
         if (numbers[i] % 3 != 0 && numbers[i] % 5 == 0) {
             className = 'ho';
-            tableHtml += `<td class="${className}">Ho!</td>`;
+            tableHtml += `<td class="${className}">Ho! - ${value}</td>`;
         }
         // If neither
         // Print Value
