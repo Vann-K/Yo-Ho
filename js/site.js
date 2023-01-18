@@ -12,7 +12,7 @@ function getValues() {
         // Generate
         let numbersArray = generateYoHo(countToValue);
         // Display
-        displayYoHo(numbersArray)
+        displayYoHo(yoValue, hoValue, numbersArray)
     } else {
         Swal.fire(
             {
@@ -38,11 +38,11 @@ function generateYoHo(countToNumber) {
 
 
 // Display Function, to display it onto the html page.
-function displayYoHo(numbers) {
+function displayYoHo(yoValue, hoValue, numbers) {
     // Grab value for the html element where we will place it.
     let tableBody = document.getElementById('yoHoTable');
     let tableHtml = "";
-    //  For each array value check if it is divisible by 3 && 5
+    //  For each array value check if it is divisible by yo && ho
     for (i = 0; i < numbers.length; i++) {
 
         let value = numbers[i]
@@ -53,25 +53,25 @@ function displayYoHo(numbers) {
         }
 
         // print yoho
-        if (numbers[i] % 3 == 0 && numbers[i] % 5 == 0) {
+        if (numbers[i] % yoValue == 0 && numbers[i] % hoValue == 0) {
             className = 'yoHo';
             tableHtml += `<td class="${className}">Yo-Ho! - ${value}</td>`;
         }
-        // If divisible 3 && not divisible by 5
+        // If divisible yo && not divisible by ho
         // Print Yo
-        if (numbers[i] % 3 == 0 && numbers[i] % 5 != 0) {
+        if (numbers[i] % yoValue == 0 && numbers[i] % hoValue != 0) {
             className = 'yo';
             tableHtml += `<td class="${className}">Yo! - ${value}</td>`;
         }
         //If divisble by 5 && not 3
         //Print Ho
-        if (numbers[i] % 3 != 0 && numbers[i] % 5 == 0) {
+        if (numbers[i] % yoValue != 0 && numbers[i] % hoValue == 0) {
             className = 'ho';
             tableHtml += `<td class="${className}">Ho! - ${value}</td>`;
         }
         // If neither
         // Print Value
-        if (numbers[i] % 3 != 0 && numbers[i] % 5 != 0) {
+        if (numbers[i] % yoValue != 0 && numbers[i] % hoValue != 0) {
             tableHtml += `<td>${value}</td>`;
         }
 
