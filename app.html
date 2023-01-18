@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yo-Ho: A Coding Challenge</title>
 
+    <!-- CDN Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/piratesblackbeard" rel="stylesheet">
+
+
     <!-- DEVICONS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
@@ -64,9 +68,7 @@
     <main class="container">
         <div class="row row-cols-1  d-flex justify-content-center">
             <div class="col col-12 border-2 border-bottom border-dark-subtle">
-
-
-                <div class="col">
+                <div>
                     <h1>Yo-Ho! - A Pirate's FizzBuzz</h1>
                     <p>Ye have heard of the fabled FizzBuzz, but pirates always prefer knock-offs. So here be Yo-Ho!
                         A
@@ -77,26 +79,36 @@
                         which number you'd like the pirates to count to.</p>
                 </div>
             </div>
-        </div>
-        <div class="col col-12 mt-2">
-            <form action="#" class="row gy-2 gx-3 pb-1 border-2 border-bottom border-dark-subtle">
-                <h1>Yo-Ho!</h1>
-                <div class="col">
-                    <input type="number" placeholder="Yo Value!" id="yoValue" class="form-control" value="3"
-                        aria-label="Yo Value">
-                    <label class="form-check-label" for="yoValue">Yo Value</label>
-                </div>
-                <div class="col">
-                    <input type="number" placeholder="Ho Value!" id="hoValue" class="form-control" value="5"
-                        aria-label="Ho Value">
-                    <label class="form-check-label" for="yoValue">Ho Value</label>
-                </div>
-                <div class="col">
-                    <input type="number" placeholder="How High?" id="countTo" class="form-control" value="100"
-                        aria-label="Yo Value">
-                    <label class="form-check-label" for="yoValue">How High Can They Count?</label>
-                </div>
-            </form>
+
+            <div class="col col-12 mt-2 border-2 border-bottom border-dark-subtle pb-2">
+                <form action="#" class="row gy-2 gx-3">
+                    <h1>Yo-Ho!</h1>
+                    <div class="col">
+                        <input type="number" placeholder="Yo Value!" id="yoValue" class="form-control" value="3"
+                            aria-label="Yo Value">
+                        <label class="form-check-label" for="yoValue">Yo Value</label>
+                    </div>
+                    <div class="col">
+                        <input type="number" placeholder="Ho Value!" id="hoValue" class="form-control" value="5"
+                            aria-label="Ho Value">
+                        <label class="form-check-label" for="hoValue">Ho Value</label>
+                    </div>
+                    <div class="col">
+                        <input type="number" placeholder="How High?" id="countTo" class="form-control" value="100"
+                            aria-label="Yo Value">
+                        <label class="form-check-label" for="countTo">How High Can They Count?</label>
+                    </div>
+                </form>
+                <div class="text-end"><button class="btn btn-dark btn-lg" id="btnSubmit">Yo-Ho! Yo-Ho!</button></div>
+
+            </div>
+            <div class="col">
+                <table class="table">
+                    <tbody id="yoHoTable">
+                        <!-- <tr><td></td></tr> -->
+                    </tbody>
+                </table>
+            </div>
         </div>
     </main>
     <footer class="container-fluid py-2">
@@ -133,7 +145,7 @@
 
     <!-- Event Listener -->
     <script>
-        document.getElementById('btnSubmit').addEventListener('click', displayMessage);
+        document.getElementById('btnSubmit').addEventListener('click', getValues);
     </script>
 
 </body>

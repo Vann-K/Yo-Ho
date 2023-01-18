@@ -112,3 +112,20 @@ footer {
     font-size: 4rem;
     padding-left: .5rem;
 }
+
+
+/*START: Yo-Ho Styling */
+.yo {
+    background-color: #8eb897 !important;
+}
+
+.ho {
+    background-color: #d3c0d2 !important;
+}
+
+.yoHo {
+    background-color: #44195e !important;
+    color: #FFCB47 !important;
+}
+
+/*END: Yo-Ho Styling */

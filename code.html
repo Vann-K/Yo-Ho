@@ -69,29 +69,131 @@
         <div class="row">
             <h1 class="border-bottom border-2 border-dark-subtle">The Code</h1>
             <!-- SOURCE CODE -->
-            <div class="col col-12 col-md-8">
+            <div class="col col-12 col-md-9">
                 <pre class="line-numbers">
                     <code class="language-js">
-                        function displayMessage() {
-                            let msg = document.getElementById('message').value;
-                        
-                            Swal.fire(
-                                {
-                                    backdrop: false,
-                                    title: 'Yo-Ho',
-                                    text: msg
-                                }
-                            );
-                        }
+                        // Entry Function, for when we click our Yo Ho Button
+function getValues() {
+    // Get the values from the three forms.
+    // Parse to an Int
+    let yoValue = parseInt(document.getElementById('yoValue').value);
+    let hoValue = parseInt(document.getElementById('hoValue').value);
+    let countToValue = parseInt(document.getElementById('countTo').value);
+
+    // Check Validity
+    if (Number.isInteger(yoValue) && Number.isInteger(hoValue) && Number.isInteger(countToValue)) {
+        // Generate
+        let numbersArray = generateYoHo(countToValue);
+        // Display
+        displayYoHo(numbersArray)
+    } else {
+        Swal.fire(
+            {
+                title: "Scurvy Dog!",
+                text: "Ye be needin' numbers!",
+                icon: 'error'
+            }
+        )
+    }
+
+}
+
+// Logic Function, for parsing all the numbers from the received data
+function generateYoHo(countToNumber) {
+    // For loop to count through the values and generate the array
+    let numbersArray = [];
+
+    for (i = 1; i <= countToNumber; i++) {
+        numbersArray.push(i);
+    }
+    return numbersArray;
+}
+
+
+// Display Function, to display it onto the html page.
+function displayYoHo(numbers) {
+    // Grab value for the html element where we will place it.
+    let tableBody = document.getElementById('yoHoTable');
+    let tableHtml = "";
+    //  For each array value check if it is divisible by 3 && 5
+    for (i = 0; i < numbers.length; i++) {
+
+        let value = numbers[i]
+        let className = '';
+
+        if (i % 5 == 0) {
+            tableHtml += '&lt;tr>'
+        }
+
+        // print yoho
+        if (numbers[i] % 3 == 0 && numbers[i] % 5 == 0) {
+            className = 'yoHo';
+            tableHtml += `&lt;td class="${className}">Yo-Ho!&lt;/td>`;
+        }
+        // If divisible 3 && not divisible by 5
+        // Print Yo
+        if (numbers[i] % 3 == 0 && numbers[i] % 5 != 0) {
+            className = 'yo';
+            tableHtml += `&lt;td class="${className}">Yo!&lt;/td>`;
+        }
+        //If divisble by 5 && not 3
+        //Print Ho
+        if (numbers[i] % 3 != 0 && numbers[i] % 5 == 0) {
+            className = 'ho';
+            tableHtml += `&lt;td class="${className}">Ho!&lt;/td>`;
+        }
+        // If neither
+        // Print Value
+        if (numbers[i] % 3 != 0 && numbers[i] % 5 != 0) {
+            tableHtml += `&lt;td>${value}&lt;/td>`;
+        }
+
+        if ((i + 1) % 5 == 0) {
+            tableHtml += '&lt;/tr>'
+        }
+
+    }
+
+    tableBody.innerHTML = tableHtml;
+
+
+}
                     </code>
                 </pre>
 
             </div>
             <!-- Code Description -->
-            <div class="col col-12 col-md-4">
-                <p>The code is structured in one function.</p>
-                <h4><code>displayMessage()</code></h4>
-                <p>This functions displays a message in a Sweet Alert.</p>
+            <div class="col col-12 col-md-3">
+                <p>The code is structured in three functions overall.</p>
+                <h4><code>getValues()</code></h4>
+                <p>This function grabs the values from the HTML inputs of <code>yoValue, hoValue,</code> and
+                    <code>countTo</code>. In the process of grabbing those values and setting them to the variables we
+                    also parse them directly into integers.
+                </p>
+                <p>Next, we have an if statement to check if all the values entered are numbers and not text. We use the
+                    && operator to cover that all of the values are numbers. The if statement executes and either calls
+                    <code>generateYoHo()</code> and <code> displayYoHo()</code> or it produces a Sweet Alert to let them
+                    know that scurvy dogs needs numbers.
+                </p>
+
+                <h4><code>generateYoHo()</code></h4>
+                <p>This function is used to generate the array of numbers between 1 to whatever number the user has
+                    chosen. It takes the parameter of <code>countToNumber</code>, It sets an empty array, then executes
+                    a for loop that increments by one after each time it pushes the value of <code>i</code> to the
+                    array.</p>
+                <h4><code>displayYoHo</code></h4>
+                <p>Here we have the true backbone of this logical challenge. It starts with grabbing the document
+                    element of <code>yoHoTable</code>. Then <code>tableHtml</code> is assigned a blank string that will
+                    be used later. A for loop is used agai to iterate through each index of the array. I decided to use
+                    a series of if statements to solve this particular FizzBuzz style challenge.</p>
+                <p>The if statements make use of modulos, logical AND operators, and string template literals. The
+                    modulo operator, <code>%</code> allows us to receive the remainder after the division. So
+                    <code> 10 % 5</code> would give us zero, since 10 is divided by five evenly. If we were to use
+                    instead <code> 10 % 4 </code> we would be given the remainder of 2. The logical AND operator is used
+                    similarly as we did when we checked the validity of numbers. Then we use string template literals to
+                    make it a bit easier and cleaner to assign new and continued values to <code>tableHtml</code>.
+                    Finally, we tack all of that on to the HTML to display for our user.
+                </p>
             </div>
         </div>
 
