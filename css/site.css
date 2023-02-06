@@ -24,14 +24,14 @@
 html,
 body {
     height: 100%;
-    font-family: 'Encoda Sans Condensed', sans-serif;
+
 }
 
 body {
     display: flex;
     flex-direction: column;
     background-color: var(--vk-dark-color);
-    font-family: 'Encoda Sans Condensed', sans-serif;
+    font-family: 'Encode Sans Condensed', sans-serif;
 }
 
 code {
