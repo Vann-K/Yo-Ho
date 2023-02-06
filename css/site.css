@@ -12,10 +12,7 @@
 
     --vk-background-color: #e7f2f7;
 
-    --vk-title-font: 'Bebas Neue', sans-serif;
-    --vk-subtitle-font: 'Fira Sans', sans-serif;
-    --vk-heading-font: 'Bebas Neue', sans-serif;
-    --vk-body-font: 'Roboto', sans-serif;
+
 
     --vk-font-size: 1.2rem;
     --vk-font-weight: 400;
@@ -27,12 +24,14 @@
 html,
 body {
     height: 100%;
+    font-family: 'Encoda Sans Condensed', sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
     background-color: var(--vk-dark-color);
+    font-family: 'Encoda Sans Condensed', sans-serif;
 }
 
 code {
@@ -54,7 +53,7 @@ footer {
 /*START: Navbar Overrides  */
 
 .navbar-brand {
-    color: var(--vk-secondary-color);
+    color: var(--vk-dark-color);
 }
 
 #mainNav {
@@ -138,6 +137,9 @@ footer {
     padding-left: .5rem;
 }
 
+td {
+    background-color: var(--vk-secondary-color) !important;
+}
 
 /*START: Yo-Ho Styling */
 .yo {
@@ -145,7 +147,7 @@ footer {
 }
 
 .ho {
-    background-color: var(--vk-secondary-color) !important;
+    background-color: var(--vk-light-color) !important;
 }
 
 .yoHo {
