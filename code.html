@@ -26,7 +26,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-bottom" id="mainNav">
+        <nav class="navbar navbar-expand-lg " id="mainNav">
             <div class="container-xxl">
                 <a class="navbar-brand" href="/index.html">
                     <img src="/img/Kraken-Footer-Logo.svg" height="50" />
@@ -67,7 +67,7 @@
     <main class="container">
 
         <div class="row">
-            <h1 class="border-bottom border-2 border-dark-subtle">The Code</h1>
+            <h1 class="border-bottom border-2 border-dark-subtle mt-3">The Code</h1>
             <!-- SOURCE CODE -->
             <div class="col col-12 col-md-9">
                 <pre class="line-numbers">
@@ -161,7 +161,7 @@
             <!-- Code Description -->
             <div class="col col-12 col-md-3">
                 <p>The code is structured in three functions overall.</p>
-                <h4><code>getValues()</code></h4>
+                <h4><code class="language-js">getValues()</code></h4>
                 <p>This function grabs the values from the HTML inputs of <code>yoValue, hoValue,</code> and
                     <code>countTo</code>. In the process of grabbing those values and setting them to the variables we
                     also parse them directly into integers.
@@ -172,12 +172,12 @@
                     know that scurvy dogs needs numbers.
                 </p>
 
-                <h4><code>generateYoHo()</code></h4>
+                <h4><code class="language-js">generateYoHo()</code></h4>
                 <p>This function is used to generate the array of numbers between 1 to whatever number the user has
                     chosen. It takes the parameter of <code>countToNumber</code>, It sets an empty array, then executes
                     a for loop that increments by one after each time it pushes the value of <code>i</code> to the
                     array.</p>
-                <h4><code>displayYoHo</code></h4>
+                <h4><code class="language-js">displayYoHo()</code></h4>
                 <p>Here we have the true backbone of this logical challenge. It starts with grabbing the document
                     element of <code>yoHoTable</code>. Then <code>tableHtml</code> is assigned a blank string that will
                     be used later. A for loop is used agai to iterate through each index of the array. I decided to use
@@ -206,7 +206,8 @@
                         <img src="/img/Kraken-Footer-Logo.svg" height="50" />
                     </div>
                     <div class="col-12 col-md d-flex justify-content-center justify-content-md-end">
-                        <a href="#" target="_blank" class="socialIcons"><i class="bi bi-linkedin p-2"></i></a>
+                        <a href="https://www.linkedin.com/in/vannerick-k-3b02ba121/" target="_blank"
+                            class="socialIcons"><i class="bi bi-linkedin p-2"></i></a>
                         <a href="#" target="_blank" class="socialIcons"><i class="bi bi-envelope-at p-2"></i></a>
                     </div>
                 </div>

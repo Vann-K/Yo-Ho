@@ -1,4 +1,5 @@
-// Entry Function, for when we click our Yo Ho Button
+// Entry Point, for when we click our Yo Ho Button
+// Controls the application
 function getValues() {
     // Get the values from the three forms.
     // Parse to an Int
