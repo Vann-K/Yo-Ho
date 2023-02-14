@@ -76,86 +76,101 @@
                 <pre class="line-numbers">
                     <code class="language-js">
                         // Entry Function, for when we click our Yo Ho Button
-                        function getValues() {
+                        <a href="#getValuesSection" id="getValuesCode" class="text-decoration-none">function getValues() </a>
+                        {
                             // Get the values from the three forms.
                             // Parse to an Int
                             let yoValue = parseInt(document.getElementById('yoValue').value);
                             let hoValue = parseInt(document.getElementById('hoValue').value);
                             let countToValue = parseInt(document.getElementById('countTo').value);
                         
-                            // Check Validity
-                            if (Number.isInteger(yoValue) && Number.isInteger(hoValue) && Number.isInteger(countToValue)) {
-                                // 
-                                // Generate
-                                let numbersArray = generateYoHo(countToValue);
-                                // Display
-                                displayYoHo(yoValue, hoValue, numbersArray)
-                            } else {
-                                Swal.fire(
-                                    {
-                                        title: "Scurvy Dog!",
-                                        text: "Ye be needin' numbers!",
-                                        icon: 'error'
-                                    }
-                                )
-                            }
-                        
+                                // Check Validity
+                                if (Number.isInteger(yoValue) && Number.isInteger(hoValue) && Number.isInteger(countToValue)) 
+                                {
+                                    // Generate
+                                    let numbersArray = generateYoHo(countToValue);
+                                    // Display
+                                    displayYoHo(yoValue, hoValue, numbersArray)
+                                }
+                                else 
+                                {
+                                    Swal.fire
+                                    ({
+                                            title: "Scurvy Dog!",
+                                            text: "Ye be needin' numbers!",
+                                            icon: 'error'
+                                    })
+                                }
                         }
                         
                         // Logic Function, for parsing all the numbers from the received data
-                        function generateYoHo(countToNumber) {
+                        <a href="#generateYoHoSection" id="generateYoHoCode" class="text-decoration-none">function generateYoHo(countToNumber)</a>
+                        {
                             // For loop to count through the values and generate the array
                             let numbersArray = [];
                         
-                            for (i = 1; i <= countToNumber; i++) {
-                                numbersArray.push(i);
-                            }
+                                for (i = 1; i &lt;= countToNumber; i++) 
+                                {
+                                    numbersArray.push(i);
+                                }
+
                             return numbersArray;
                         }
                         
                         
                         // Display Function, to display it onto the html page.
-                        function displayYoHo(yoValue, hoValue, numbers) {
+                        <a href="#displayYoHoSection" id="displayYoHoCode" class="text-decoration-none">function displayYoHo(yoValue, hoValue, numbers) </a>
+                        {
                             // Grab value for the html element where we will place it.
                             let tableBody = document.getElementById('yoHoTable');
                             let tableHtml = "";
+                            
                             //  For each array value check if it is divisible by yo && ho
-                            for (i = 0; i < numbers.length; i++) {
+                            for (i = 0; i &lt; numbers.length; i++) 
+                            {
                         
                                 let value = numbers[i]
                                 let className = '';
                         
-                                if (i % 5 == 0) {
-                                    tableHtml += '&lt;tr>'
-                                }
+                                    if (i % 5 == 0) 
+                                    {
+                                        tableHtml += '&lt;tr>'
+                                    }
                         
-                                // print yoho
-                                if (numbers[i] % yoValue == 0 && numbers[i] % hoValue == 0) {
-                                    className = 'yoHo';
-                                    tableHtml += `&lt;td class="${className}">Yo-Ho! - ${value}&lt;/td>`;
-                                }
-                                // If divisible yo && not divisible by ho
-                                // Print Yo
-                                if (numbers[i] % yoValue == 0 && numbers[i] % hoValue != 0) {
-                                    className = 'yo';
-                                    tableHtml += `&lt;td class="${className}">Yo! - ${value}&lt;/td>`;
-                                }
-                                //If divisble by 5 && not 3
-                                //Print Ho
-                                if (numbers[i] % yoValue != 0 && numbers[i] % hoValue == 0) {
-                                    className = 'ho';
-                                    tableHtml += `&lt;td class="${className}">Ho! - ${value}&lt;/td>`;
-                                }
-                                // If neither
-                                // Print Value
-                                if (numbers[i] % yoValue != 0 && numbers[i] % hoValue != 0) {
-                                    tableHtml += `&lt;td>${value}&lt;/td>`;
-                                }
+                                    // print yoho
+                                    if (numbers[i] % yoValue == 0 && numbers[i] % hoValue == 0) 
+                                    {
+                                        className = 'yoHo';
+                                        tableHtml += `&lt;td class="${className}">Yo-Ho! - ${value}&lt;/td>`;
+                                    }
+
+                                    // If divisible yo && not divisible by ho
+                                    // Print Yo
+                                    if (numbers[i] % yoValue == 0 && numbers[i] % hoValue != 0) 
+                                    {
+                                        className = 'yo';
+                                        tableHtml += `&lt;td class="${className}">Yo! - ${value}&lt;/td>`;
+                                    }
+
+                                    //If divisble by 5 && not 3
+                                    //Print Ho
+                                    if (numbers[i] % yoValue != 0 && numbers[i] % hoValue == 0) 
+                                    {
+                                        className = 'ho';
+                                        tableHtml += `&lt;td class="${className}">Ho! - ${value}&lt;/td>`;
+                                    }
+
+                                    // If neither
+                                    // Print Value
+                                    if (numbers[i] % yoValue != 0 && numbers[i] % hoValue != 0) 
+                                    {
+                                        tableHtml += `&lt;td>${value}&lt;/td>`;
+                                    }
                         
-                                if ((i + 1) % 5 == 0) {
-                                    tableHtml += '&lt;/tr>'
-                                }
-                        
+                                    if ((i + 1) % 5 == 0) 
+                                    {
+                                        tableHtml += '&lt;/tr>'
+                                    }
                             }
                     </code>
                 </pre>
@@ -163,24 +178,39 @@
             </div>
             <!-- Code Description -->
             <div class="col col-12 col-md-3">
-                <p>The code is structured in three functions overall.</p>
-                <h4><code class="language-js">getValues()</code></h4>
+                <p>The code is structured in three functions. Called functions will be detailed in their own sections.
+                    Click a <code class="language-js">headline()</code> to scroll to that section of the code. And click
+                    the function name within the code to scroll to that write up section.</p>
+                <a href="#getValuesCode" class="text-decoration-none">
+                    <h4><code class="language-js" id="getValuesSection">getValues()</code></h4>
+                </a>
+                <hr>
                 <p>This function grabs the values from the HTML inputs of <code>yoValue, hoValue,</code> and
                     <code>countTo</code>. In the process of grabbing those values and setting them to the variables we
                     also parse them directly into integers.
                 </p>
+
                 <p>Next, we have an if statement to check if all the values entered are numbers and not text. We use the
                     && operator to cover that all of the values are numbers. The if statement executes and either calls
                     <code>generateYoHo()</code> and <code> displayYoHo()</code> or it produces a Sweet Alert to let them
                     know that scurvy dogs needs numbers.
                 </p>
+                <br>
 
-                <h4><code class="language-js">generateYoHo()</code></h4>
+                <a href="#generateYoHoCode" class="text-decoration-none">
+                    <h4><code class="language-js" id="generateYoHoSection">generateYoHo()</code></h4>
+                </a>
+                <hr>
                 <p>This function is used to generate the array of numbers between 1 to whatever number the user has
                     chosen. It takes the parameter of <code>countToNumber</code>, It sets an empty array, then executes
                     a for loop that increments by one after each time it pushes the value of <code>i</code> to the
                     array.</p>
-                <h4><code class="language-js">displayYoHo()</code></h4>
+                <br>
+
+                <a href="#displayYoHoCode" class="text-decoration-none">
+                    <h4><code class="language-js" id="displayYoHoSection">displayYoHo()</code></h4>
+                </a>
+                <hr>
                 <p>Here we have the true backbone of this logical challenge. It starts with grabbing the document
                     element of <code>yoHoTable</code>. Then <code>tableHtml</code> is assigned a blank string that will
                     be used later. A for loop is used agai to iterate through each index of the array. I decided to use
@@ -193,6 +223,10 @@
                     make it a bit easier and cleaner to assign new and continued values to <code>tableHtml</code>.
                     Finally, we tack all of that on to the HTML to display for our user.
                 </p>
+            </div>
+            <hr>
+            <div class="text-end mb-2"><a href="#" class="text-decoration-none"><code
+                        class="language-js">returnToTop()</code></a>
             </div>
         </div>
 
